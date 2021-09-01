@@ -32,6 +32,8 @@ public class ProductController {
 	public String saveProduct(Product product, Model model) {
 		// TODO implementation...
 		product.setCategory(categoryService.getCategory(product.getCategory().getId()));
+		int count = (int) productService.getAll().stream().count();
+		product.setId(count++);
 		productService.save(product);
 
 		model.addAttribute("product", product);
