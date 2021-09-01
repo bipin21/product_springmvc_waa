@@ -33,7 +33,8 @@ public class ProductController {
 		// TODO implementation...
 		product.setCategory(categoryService.getCategory(product.getCategory().getId()));
 		int count = (int) productService.getAll().stream().count();
-		product.setId(count++);
+		count++;
+		product.setId(count);
 		productService.save(product);
 
 		model.addAttribute("product", product);

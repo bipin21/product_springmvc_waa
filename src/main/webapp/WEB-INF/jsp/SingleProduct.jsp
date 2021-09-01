@@ -25,7 +25,7 @@
     </table>
 
 
-    <a href="/"> Back </a>
+    <a href="<c:url value="/" />"> Back </a>
 
 </div>
 </body>
